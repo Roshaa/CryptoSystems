@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('newtrade', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('coin_id');
-            $table = $table->foreign('coin_id')->references('id')->on('cryptocoin')->onDelete('cascade');
-
+            $table->foreign('coin_id')->references('id')->on('cryptocoin')->onDelete('cascade');
             $table->text('conditions');
         });
     }

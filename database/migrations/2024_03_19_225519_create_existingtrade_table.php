@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('existingtrade', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('coin_id');
-            $table = $table->foreign('coin_id')->references('id')->on('cryptocoin')->onDelete('cascade');
-
+            $table->foreign('coin_id')->references('id')->on('cryptocoin')->onDelete('cascade');
             $table->text('conditions');
             $table->boolean('win');
             $table->integer('percentageofwin');
