@@ -22,9 +22,9 @@
 </head>
 
 <body class="bg-indigo-950">
-    <div class="w-full">
+    <div class="w-full h-full">
 
-
+        @yield('pagecontent')
 
         
     </div>
