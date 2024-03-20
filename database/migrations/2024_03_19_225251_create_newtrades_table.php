@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('newtrade', function (Blueprint $table) {
+        Schema::create('newtrades', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('coin_id');
-            $table->foreign('coin_id')->references('id')->on('cryptocoins')->onDelete('cascade');
+            $table->text('coin');
             $table->text('conditions');
+            $table->text('type');
+            $table->text('entryprice');
+            $table->text('status');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('newtrade');
+        Schema::dropIfExists('newtrades');
     }
 };

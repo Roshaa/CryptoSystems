@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\cryptocoin;
+use App\Models\newtrade;
 
 class cryptocoincontroller extends Controller
 {
@@ -32,6 +33,29 @@ class cryptocoincontroller extends Controller
         $request->image->move(public_path('images'), $imageName);
 
         $coin->save();
+        return redirect('edittrades');
+    }
+
+    public static function newtrade(Request $request){
+        $newtrade = new newtrade();
+
+        $request->validate([
+
+            'coin' => 'required',
+            'conditions' => 'required|min:10',
+            'type' => 'required',
+            'entryprice' => 'required|numeric'
+
+        ]);
+
+        $newtrade->coin = $request->coin;
+        $newtrade->conditions = $request->conditions;
+        $newtrade->entryprice = $request->entryprice;
+        $newtrade->type = $request->type;
+        $newtrade->status= 'open';
+
+    
+        $newtrade->save();
         return redirect('edittrades');
     }
 }
