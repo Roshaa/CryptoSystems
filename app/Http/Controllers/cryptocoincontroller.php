@@ -66,10 +66,12 @@ class cryptocoincontroller extends Controller
         return redirect('edittrades');
     }
 
+
     public static function closetrade(Request $request){
         $newtrade = newtrade::find($request->closetrade);
         $newtrade->status = 'closed';
         $newtrade->save();
         return redirect('edittrades');
     }
+
 }

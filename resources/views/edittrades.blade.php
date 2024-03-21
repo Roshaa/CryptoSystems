@@ -180,7 +180,37 @@
 
 
 
+                </div>
+
+
+                <div class="mt-3">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="nameabr">Coin
+                        Abreviation</label>
+                    <input
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        type="text" name="nameabr">
+
+                </div>
+
+                <div class="mt-3">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload
+                        file</label>
+                    <input
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        id="image" type="file">
+                </div>
+
+
+
+
+                <button type="submit"
+                    class="mt-3 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                    Submit
+                </button>
             </div>
+        </form>
 
         </div>
     </div>
