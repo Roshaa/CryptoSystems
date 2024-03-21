@@ -12,12 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('existingtrade', function (Blueprint $table) {
+
             $table->id();
-            $table->unsignedBigInteger('coin_id');
-            $table->foreign('coin_id')->references('id')->on('cryptocoins')->onDelete('cascade');
+            $table->text('coin');
             $table->text('conditions');
-            $table->boolean('win');
-            $table->integer('percentageofwin');
+            $table->text('type');
+            $table->integer('wins');
+            $table->integer('losses');
+            $table->integer('winrate');
+            $table->text('testedcoins');
+            
         });
     }
 

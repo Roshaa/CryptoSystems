@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cryptocoins', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('nameabr');
             $table->string('imagepath');
         });
