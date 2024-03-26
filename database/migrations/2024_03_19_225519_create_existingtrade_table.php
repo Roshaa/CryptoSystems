@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    Alterar tabela para strategy
+
     public function up(): void
     {
         Schema::create('existingtrade', function (Blueprint $table) {
