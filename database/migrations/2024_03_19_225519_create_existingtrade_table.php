@@ -10,7 +10,7 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('existingtrade', function (Blueprint $table) {
+        Schema::create('strategy', function (Blueprint $table) {
 
             $table->id();
             $table->text('coin');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('losses');
             $table->integer('winrate');
             $table->text('testedcoins');
+            $table->boolean('favourite');
             
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('existingtrade');
+        Schema::dropIfExists('strategy');
     }
 };
