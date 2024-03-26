@@ -6,18 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    no historico de trades deve ser possivel criar uma estrategia diretamente
+    no historico de trades deve ser possivel repetir uma trade diretamente
+    conditions (tava no trabalho)eliminadas, deve estar apenas no historico
+    mudar o nome apenas pa trade
+    
     public function up(): void
     {
         Schema::create('newtrades', function (Blueprint $table) {
             $table->id();
             $table->text('coin');
-            $table->text('conditions');
             $table->text('type');
             $table->text('entryprice');
+            falta o close price
             $table->text('status');
+            ao fechar tambem deve fazer um calculo automatico do profit/loss
+
+            tem que ir buscar um strategy id, pode ser nulo
         });
     }
 
