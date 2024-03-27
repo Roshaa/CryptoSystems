@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    Alterar tabela para strategy
+    //Alterar tabela para strategy
 
     public function up(): void
     {
-        Schema::create('strategy', function (Blueprint $table) {
+        Schema::create('strategies', function (Blueprint $table) {
 
             $table->id();
             $table->text('coin');

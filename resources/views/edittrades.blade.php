@@ -1,7 +1,8 @@
 @extends('layouts.page')
 @section('pagecontent')
     <div class="w-full h-6/12 flex">
-        <form action="/newcoin" method="POST" class="hide w-2/12 pl-5 h-12/12 border-r border-white" enctype="multipart/form-data">
+        <form action="/newcoin" method="POST" class="hide w-2/12 pl-5 h-12/12 border-r border-white"
+            enctype="multipart/form-data">
             @csrf
             <div class="mt-5 pr-2 ">
                 <h1 class="text-white text-2xl mt-2">New Coin</h1>
@@ -13,37 +14,26 @@
                         type="text" name="name">
 
                 </div>
-
-
                 <div class="mt-3">
-
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="nameabr">Coin
                         Abreviation</label>
                     <input
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         type="text" name="nameabr">
-
                 </div>
-
                 <div class="mt-3">
-
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Upload
                         file</label>
                     <input
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                         id="image" name="image" type="file">
                 </div>
-
-
-
-
                 <button type="submit"
                     class="mt-3 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                     Submit
                 </button>
             </div>
         </form>
-
         <form action="/newtrade" method="POST" class="hide w-4/12 h-12/12 border-r border-white pl-5 h-full">
             @csrf
             <div class="mt-5 pr-2">
@@ -58,9 +48,6 @@
                     <option value="FR">France</option>
                     <option value="DE">Germany</option>
                 </select>
-
-
-
                 <label for="conditions"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-2">Conditions</label>
                 <textarea id="conditions" name="conditions" rows="4"
@@ -75,11 +62,8 @@
                         class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Entry
                         Price</label>
                 </div>
-
-
                 <fieldset>
                     <legend class="sr-only">Countries</legend>
-
                     <div class="flex items-center mb-4">
                         <input id="country-option-1" type="radio" name="type" value="Long"
                             class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
@@ -88,7 +72,6 @@
                             Long
                         </label>
                     </div>
-
                     <div class="flex items-center mb-4">
                         <input id="country-option-2" type="radio" name="type" value="Short"
                             class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
@@ -97,28 +80,20 @@
                             Short
                         </label>
                     </div>
-
                 </fieldset>
-
-
-
                 <button type="submit"
                     class="mt-3 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                     Submit
                 </button>
             </div>
-
             @if ($errors->any())
                 {{ implode('', $errors->all('<div>:message</div>')) }}
             @endif
         </form>
-
         <div class="hide w-6/12 pl-5 h-full">
             @csrf
             <div class="mt-5 pr-2 border-white">
                 <h1 class="text-white text-2xl mt-2">Ongoing Trades</h1>
-
-
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-3">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -169,50 +144,13 @@
                         </tbody>
                     </table>
                 </div>
-
                 </tbody>
                 </table>
-
-
-
-
-
-
-
-
-                </div>
-
-
-                <div class="mt-3">
-
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="nameabr">Coin
-                        Abreviation</label>
-                    <input
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        type="text" name="nameabr">
-
-                </div>
-
-                <div class="mt-3">
-
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload
-                        file</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        id="image" type="file">
-                </div>
-
-
-
-
-                <button type="submit"
-                    class="mt-3 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                    Submit
-                </button>
             </div>
+        </div>
         </form>
 
-        </div>
+    </div>
     </div>
     <div class="w-full flex">
         <div class="w-6/12 mt-3">
@@ -263,33 +201,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($newtrades as $trade )
-                            @if ($trade->status=='closed')
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row"
-                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $trade->coin }}"
-                                </th>
-                                <td class="px-6 py-4">
-                                    {{ $trade->conditions }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $trade->entryprice }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    necessario exit price ao fechar
-                                </td>
-                                <td class="px-6 py-4">
-                                    profit
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $trade->type }}
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                            </tr>
+                        @foreach ($newtrades as $trade)
+                            @if ($trade->status == 'closed')
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{ $trade->coin }}"
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        {{ $trade->conditions }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $trade->entryprice }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        necessario exit price ao fechar
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        profit
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $trade->type }}
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#"
+                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    </td>
+                                </tr>
                             @endif
                         @endforeach
                     </tbody>
