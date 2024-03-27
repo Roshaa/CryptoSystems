@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cryptocoin extends Model
+class trades extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable=[
-        'name','nameabr','imagepath'
+    protected $fillable = [
+
+        'coin','conditions','type','entryprice'
+
     ];
 }

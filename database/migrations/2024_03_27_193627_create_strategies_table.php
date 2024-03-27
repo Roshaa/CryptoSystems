@@ -18,10 +18,7 @@ return new class extends Migration
             $table->text('type');
             $table->integer('wins');
             $table->integer('losses');
-            $table->integer('winrate');
-            $table->text('testedcoins');
-            $table->boolean('favourite');
-            
+
         });
     }
 

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('coin');
             $table->text('type');
             $table->integer('entryprice');
-            $table->integer('exitprice');
+            $table->integer('exitprice')->nullable();
             $table->text('status');
             
         });

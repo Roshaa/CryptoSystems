@@ -1,0 +1,2 @@
+criar form para inserir estrategia
+botao no historico para transportar dados para a estrategia
