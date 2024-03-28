@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('strategy_id')->nullable();
             $table->text('coin');
+            $table->text('conditions');
             $table->text('type');
             $table->integer('entryprice');
             $table->integer('exitprice')->nullable();

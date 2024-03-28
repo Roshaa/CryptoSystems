@@ -16,8 +16,8 @@ return new class extends Migration
             $table->text('coin');
             $table->text('conditions');
             $table->text('type');
-            $table->integer('wins');
-            $table->integer('losses');
+            $table->integer('wins')->default(0);
+            $table->integer('losses')->default(0);
 
         });
     }
